@@ -23,7 +23,7 @@ class HDF5Dataset(Dataset):
     for key in self.data.keys():
         self.length += len(self.data[key])
     
-    self.images = np.empty((self.length,128,128,3),dtype = np.uint8)
+    self.images = np.empty((self.length,128,128,3),dtype = np.uint8) 
     self.labels = np.empty((self.length))
 
     counter = 0
@@ -41,7 +41,7 @@ class HDF5Dataset(Dataset):
     label = self.labels[index]
 
     #image = self.transform(img)
-    return (img,label)
+    return (img.transpose((2,0,1)),label)
   
   def __len__(self):
     return self.length
