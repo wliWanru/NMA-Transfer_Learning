@@ -49,5 +49,8 @@ class HDF5Dataset(Dataset):
 if __name__ == "__main__":
 
     path = '/Users/gaojun/Documents/p1/NMA/FERG_DB_256'
-    train_loader = HDF5Dataset(osp.join(path,'train.h5'))
-    test_loader = HDF5Dataset(osp.join(path,'test.h5'))
+    trainset = HDF5Dataset(osp.join(path,'train.h5'))
+    testset = HDF5Dataset(osp.join(path,'test.h5'))
+
+    trainloader = DataLoader(trainset, batch_size=12, shuffle=True)
+    testloader = DataLoader(testset, batch_size=12, shuffle=True)
