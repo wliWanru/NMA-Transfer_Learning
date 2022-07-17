@@ -36,7 +36,8 @@ class HDF5Dataset(Dataset):
       
   def __getitem__(self, index):
 
-    img = Image.fromarray(self.images[index,],'RGB')
+    #img = Image.fromarray(self.images[index,],'RGB')
+    img = self.images[index,]
     label = self.labels[index]
 
     #image = self.transform(img)
