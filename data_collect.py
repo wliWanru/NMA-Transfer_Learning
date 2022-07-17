@@ -85,14 +85,3 @@ if __name__ =='__main__':
 
     folder = '/Users/gaojun/Documents/p1/NMA/FERG_DB_256'
     split_train_test(folder)
-            if i_pic is None: continue
-            i_pic_correct = cv2.cvtColor(i_pic, cv2.COLOR_BGR2RGB)
-            i_pic_resized = cv2.resize(i_pic_correct, dsize=(128, 128))
-            pic_mat[idx_file, :, :, :] = i_pic_resized
-
-
-
-        f_name = f'{expression}.h5'
-        f = h5py.File(f_name, 'w')
-        f.create_dataset('pic_mat', data=pic_mat)
-        f.close()
