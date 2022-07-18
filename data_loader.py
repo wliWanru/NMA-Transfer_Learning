@@ -23,7 +23,7 @@ class HDF5Dataset(Dataset):
     for key in self.data.keys():
         self.length += len(self.data[key])
     
-    self.images = np.empty((self.length,128,128,3),dtype = np.uint8) 
+    self.images = np.empty((self.length,128,128,3),dtype=np.double) 
     self.labels = np.empty((self.length))
 
     counter = 0
